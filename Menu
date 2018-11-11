@@ -1,0 +1,19 @@
+print "Welcome to a restaurant Just like home! "
+Menu = {}
+
+while True:
+    menu_name = raw_input("Please enter the name of menu: ")
+    menu_price = raw_input ("Enter the price for %s: " % menu_name)
+    Menu [menu_name]= menu_price
+
+    new_menu = raw_input ("Would you like to add new menu? (y/n) ")
+
+    if new_menu == "n":
+        break
+print "menu %s" % Menu
+
+with open ("menu.txt", "w+") as Menu_file:
+    for menu in Menu:
+        Menu_file.write ("%s, %s EUR/n" % (menu, Menu[menu]))
+
+print "Bye bye!"
